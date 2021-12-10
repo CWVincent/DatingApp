@@ -121,38 +121,6 @@ namespace DatingApp.UnitTests.Tests
             Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
         }
 
-        /*[Theory]
-        [InlineData("BadRequest", "lois", "Pa$$w0rd", "todd")]
-        public async Task AddLike_ShouldBadRequest2(string statusCode, string username, string password, string userLiked)
-        {
-            // Arrange
-            var loginDto = new LoginDto
-            {
-                Username = username,
-                Password = password
-            };
-
-            registeredObject = GetRegisterObject(loginDto);
-            httpContent = GetHttpContent(registeredObject);
-
-            var result = await _client.PostAsync("api/account/login", httpContent);
-            var userJson = await result.Content.ReadAsStringAsync();
-            var user = userJson.Split(',');
-            var token = user[1].Split("\"")[3];
-
-            _client.DefaultRequestHeaders.Accept.Clear();
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            requestUri = $"{apiRoute}/" + userLiked;
-
-            // Act
-            httpResponse = await _client.PostAsync(requestUri, httpContent);
-            httpResponse = await _client.PostAsync(requestUri, httpContent);
-
-            // Assert
-            Assert.Equal(Enum.Parse<HttpStatusCode>(statusCode, true), httpResponse.StatusCode);
-            Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
-        }*/
 
         [Theory]
         [InlineData("OK", "todd", "Pa$$w0rd")]

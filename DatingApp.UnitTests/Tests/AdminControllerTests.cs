@@ -61,7 +61,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "admin", "Pa$$w0rd", "lisa", "Moderator,Member")]
+        [InlineData("OK", "admin", "Pa$$w0rd", "davis", "Moderator,Member")]
         public async Task EditRoles_ShouldReturnOK(string statusCode, string username, string password, string user2, string roles)
         {
             // Arrange

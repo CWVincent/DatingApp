@@ -25,7 +25,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("BadRequest", "lisa", "KnownAs", "Gender", "2000-01-01", "City", "Country", "Password")]
+        [InlineData("BadRequest", "todd", "KnownAs", "Gender", "2000-01-01", "City", "Country", "Password")]
         public async Task Register_ShouldFail(string statusCode, string username, string knownAs, string gender, DateTime dateOfBirth, string city, string country, string password)
         {
             // Arrange
@@ -53,7 +53,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "aaaab", "KnownAs", "Gender", "2000-01-01", "City", "Country", "Pa$$w0rd")]
+        [InlineData("OK", "shuy", "KnownAs", "Gender", "2000-01-01", "City", "Country", "Pa$$w0rd")]
         public async Task Register_ShouldReturnOk(string statusCode, string username, string knownAs, string gender, DateTime dateOfBirth, string city, string country, string password)
         {
             // Arrange
@@ -81,7 +81,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("Unauthorized", "lisa", "Password")]
+        [InlineData("Unauthorized", "todd", "Password")]
         public async Task Login_ShouldFail(string statusCode, string username, string password)
         {
             // Arrange
@@ -104,7 +104,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "lisa", "Pa$$w0rd")]
+        [InlineData("OK", "todd", "Pa$$w0rd")]
         public async Task Login_ShouldReturnOK(string statusCode, string username, string password)
         {
             // Arrange

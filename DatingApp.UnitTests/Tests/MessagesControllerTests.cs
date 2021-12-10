@@ -26,7 +26,7 @@ namespace DatingApp.UnitTests.Tests
         }
         
         [Theory]
-        [InlineData("BadRequest", "lois", "Pa$$w0rd", "lois", "Hola")]
+        [InlineData("BadRequest", "todd", "Pa$$w0rd", "todd", "Hola")]
         public async Task CreateMessage_BadRequest(string statusCode, string username, string password, string recipientUsername, string content)
         {
             // Arrange
@@ -67,7 +67,7 @@ namespace DatingApp.UnitTests.Tests
         }
         
         [Theory]
-        [InlineData("NotFound", "lois", "Pa$$w0rd", "pedritosola", "Hola")]
+        [InlineData("NotFound", "todd", "Pa$$w0rd", "JesusGarcia", "Hola")]
         public async Task CreateMessage_NotFound(string statusCode, string username, string password, string recipientUsername, string content)
         {
             // Arrange
@@ -108,7 +108,7 @@ namespace DatingApp.UnitTests.Tests
         }
         
         [Theory]
-        [InlineData("OK", "lois", "Pa$$w0rd", "lisa", "Hola")]
+        [InlineData("OK", "todd", "Pa$$w0rd", "karen", "Hola")]
         public async Task CreateMessage_OK(string statusCode, string username, string password, string recipientUsername, string content)
         {
             // Arrange
@@ -149,7 +149,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "lois", "Pa$$w0rd", "lisa", "Hola")]
+        [InlineData("OK", "todd", "Pa$$w0rd", "karen", "Hola")]
         public async Task GetMessagesForUser_OK(string statusCode, string username, string password, string recipientUsername, string content)
         {
             // Arrange
@@ -181,7 +181,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "lois", "Pa$$w0rd", "Outbox")]
+        [InlineData("OK", "todd", "Pa$$w0rd", "Outbox")]
         public async Task GetMessagesForUserFromQuery_OK(string statusCode, string username, string password, string container)
         {
             // Arrange
@@ -213,7 +213,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "lois", "Pa$$w0rd", "lisa")]
+        [InlineData("OK", "todd", "Pa$$w0rd", "karen")]
         public async Task GetMessagesThread_OK(string statusCode, string username, string password, string user2)
         {
             // Arrange
@@ -246,7 +246,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "lois", "Pa$$w0rd", "lisa", "Hola")]
+        [InlineData("OK", "todd", "Pa$$w0rd", "karen", "Hola")]
         public async Task DeleteMessage_OK(string statusCode, string username, string password, string recipientUsername, string content)
         {
             // Arrange
@@ -312,7 +312,7 @@ namespace DatingApp.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("Unauthorized", "lois", "Pa$$w0rd", "lisa", "Hola", "todd")]
+        [InlineData("Unauthorized", "karen", "Pa$$w0rd", "lisa", "Hola", "todd")]
         public async Task DeleteMessage_Unauthorized(string statusCode, string username, string password, string recipientUsername, string content, string unauth)
         {
             // Arrange
